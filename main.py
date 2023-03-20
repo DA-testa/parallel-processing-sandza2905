@@ -15,7 +15,7 @@ def parallel_processing(n, m, data):
           output.append(threads[thread])
           threads[thread] = (index, time + data[j])
 
-      return output
+    return output
     
 def main():
 
