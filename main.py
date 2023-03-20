@@ -1,31 +1,34 @@
 # python3
 
-def parallel_processing(n, m, data):
-    output = []
-    # TODO: write the function for simulating parallel tasks, 
-    # create the output pairs
+def sift_down(i, data, swaps):
+    min_index = i
+    left_child = 2 * i + 1
+    right_child = 2 * i + 2
+    n = len(data)
+    if left_child < n and data[left_child] < data[min_index]:
+        min_index = left_child
+    if right_child < n and data[right_child] < data[min_index]:
+        min_index = right_child
+    if i != min_index:
+        swaps.append((i, min_index))
+        data[i], data[min_index] = data[min_index], data[i]
+        sift_down(min_index, data, swaps)
 
-    return output
+def build_heap(data):
+    swaps = []
+    n = len(data)
+    for i in range(n//2, -1, -1):
+        sift_down(i, data, swaps)
+    return swaps
 
 def main():
-    # TODO: create input from keyboard
-    # input consists of two lines
-    # first line - n and m
-    # n - thread count 
-    # m - job count
-    n = 0
-    m = 0
-
-    # second line - data 
-    # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
-    data = []
-
-    # TODO: create the function
-    result = parallel_processing(n,m,data)
-    
-    # TODO: print out the results, each pair in it's own line
-
-
+    n = int(input())
+    data = list(map(int, input().split()))
+    swaps = build_heap(data)
+    m = len(swaps)
+    print(m)
+    for i, j in swaps:
+        print(i, j)
 
 if __name__ == "__main__":
     main()
