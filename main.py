@@ -25,7 +25,7 @@ def main():
     result = parallel_processing(n, m, data)
 
     for index,time in result:
-        print(index, time)
+        print(str(index)+' '+str(time))
         
         
 if __name__ == "__main__":
