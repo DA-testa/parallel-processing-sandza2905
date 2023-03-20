@@ -2,7 +2,7 @@
 
 def parallel_processing(n, m, data):
     output = []
-    threads = [(i,0) for i in range(n)]
+    threads = [(i, 0) for i in range(n)]
 
     for j in range(m):
           thread = 0
@@ -24,8 +24,8 @@ def main():
     data = list(map(int, input().split()))
     result = parallel_processing(n, m, data)
 
-    for a,b in result:
-        print(str(a)+' '+str(b))
+    for a, b in result:
+        print(str(a)+'  '+str(b))
         
         
 if __name__ == "__main__":
