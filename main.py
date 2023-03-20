@@ -24,8 +24,8 @@ def main():
     data = list(map(int, input().split()))
     result = parallel_processing(n, m, data)
 
-    for index,time in result:
-        print(str(index)+' '+str(time))
+    for a,b in result:
+        print(str(a)+' '+str(b))
         
         
 if __name__ == "__main__":
