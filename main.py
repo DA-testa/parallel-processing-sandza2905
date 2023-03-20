@@ -1,4 +1,5 @@
 # python3
+#221RDB004
 
 def parallel_processing(n, m, data):
     output = []
@@ -22,10 +23,10 @@ def main():
     n = int(first_line[0])
     m = int(first_line[1])
     data = list(map(int, input().split()))
-    result = parallel_processing(n, m, data)
+    result = parallel_processing(n,m,data)
 
     for a, b in result:
-        print(str(a)+'  '+str(b))
+        print(str(a)+' '+str(b))
         
         
 if __name__ == "__main__":
